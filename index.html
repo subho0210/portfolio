@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Portfolio</title>
+  <style>
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background: #0f172a;
+      color: #e0e7ff;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
+    button {
+      cursor: pointer;
+    }
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15,23,42,0.95);
+      backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 1px solid #334155;
+      z-index: 1000;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.4);
+    }
+    header .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 12px;
+      border-radius: 12px;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #2563eb;
+      outline: none;
+    }
+    /* Mobile menu toggle */
+    .mobile-menu-button {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #60a5fa;
+    }
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 75vh;
+      text-align: center;
+      padding: 64px 24px;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      user-select: none;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin-bottom: 40px;
+      color: #c7d2fe;
+    }
+    .btn-primary {
+      padding: 16px 36px;
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      border: none;
+      border-radius: 16px;
+      color: white;
+      font-weight: 700;
+      font-size: 1.125rem;
+      box-shadow: 0 6px 12px rgb(99 102 241 / 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgb(99 102 241 / 0.8);
+      outline: none;
+    }
+    /* Sections */
+    section {
+      padding: 64px 24px;
+      margin-bottom: 64px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 32px;
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      user-select: none;
+    }
+    /* About */
+    .about {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .about img {
+      flex: 1 1 280px;
+      max-width: 280px;
+      box-shadow: 0 8px 24px rgb(124 58 237 / 0.5);
+      border-radius: 20px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      user-select: none;
+    }
+    .about-text {
+      flex: 2 1 400px;
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      gap: 48px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .project-card {
+      background: rgba(22, 28, 43, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgb(45 55 72 / 0.7);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    .project-card:hover,
+    .project-card:focus-within {
+      transform: translateY(-10px);
+      box-shadow: 0 14px 48px rgb(124 58 237 / 0.7);
+      outline: none;
+    }
+    .project-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-bottom: 1px solid #4c51bf;
+    }
+    .project-content {
+      padding: 20px 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-title {
+      font-weight: 700;
+      color: #7c3aed;
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+    }
+    .project-description {
+      color: #a5b4fc;
+      flex-grow: 1;
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+    .project-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+    .project-links a {
+      font-weight: 600;
+      color: #60a5fa;
+      border: 2px solid transparent;
+      padding: 8px 12px;
+      border-radius: 12px;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+      user-select: none;
+    }
+    .project-links a:hover,
+    .project-links a:focus {
+      border-color: #60a5fa;
+      background-color: rgba(96, 165, 250, 0.2);
+      outline: none;
+    }
+    /* Contact */
+    form {
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(22, 28, 43, 0.8);
+      padding: 32px 32px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgb(45 55 72 / 0.7);
+      user-select: none;
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #818cf8;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 1rem;
+      margin-bottom: 24px;
+      border: none;
+      border-radius: 12px;
+      background-color: #1e293b;
+      color: #e0e7ff;
+      resize: vertical;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    form input:focus,
+    form textarea:focus {
+      outline: none;
+      background-color: #3b82f6;
+      box-shadow: 0 0 8px #60a5fa;
+    }
+    form button[type="submit"] {
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      border: none;
+      border-radius: 16px;
+      color: white;
+      font-weight: 700;
+      font-size: 1.125rem;
+      width: 100%;
+      padding: 16px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    form button[type="submit"]:hover,
+    form button[type="submit"]:focus {
+      background: #5b21b6;
+      box-shadow: 0 8px 24px #7c3aed;
+      outline: none;
+    }
+    .form-message {
+      text-align: center;
+      font-weight: 600;
+      color: #22c55e;
+      margin-top: -16px;
+      margin-bottom: 24px;
+      min-height: 1em;
+      user-select: none;
+    }
+    /* Footer */
+    footer {
+      background: rgba(15, 23, 42, 0.95);
+      padding: 24px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      user-select: none;
+    }
+    /* Responsive */
+    @media (max-width: 640px) {
+      nav {
+        display: none;
+      }
+      .mobile-menu-button {
+        display: block;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero {
+        padding: 64px 16px;
+      }
+      .about {
+        flex-direction: column;
+        gap: 24px;
+      }
+      .about-text {
+        font-size: 1rem;
+      }
+    }
+    /* Mobile menu overlay */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15,23,42,0.97);
+      backdrop-filter: saturate(180%) blur(20px);
+      z-index: 1100;
+      flex-direction: column;
+      padding: 80px 24px 24px;
+      gap: 32px;
+      user-select: none;
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    .mobile-menu a {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #60a5fa;
+      padding: 16px;
+      border-radius: 16px;
+      user-select: none;
+    }
+    .mobile-menu a:focus,
+    .mobile-menu a:hover {
+      background: #2563eb;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#hero" class="logo" aria-label="Personal portfolio homepage">SUBHANKAR</a>
+    <nav aria-label="Primary navigation">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+  </header>
+
+  <div id="mobile-menu" class="mobile-menu" role="menu" aria-hidden="true">
+    <a href="#hero" role="menuitem" tabindex="-1">Home</a>
+    <a href="#about" role="menuitem" tabindex="-1">About</a>
+    <a href="#projects" role="menuitem" tabindex="-1">Projects</a>
+    <a href="#contact" role="menuitem" tabindex="-1">Contact</a>
+  </div>
+
+  <main>
+    <section id="hero" class="hero" tabindex="-1">
+      <h1>SUBHANKAR MANDAL</h1>
+      <p>Full-stack Developer | UX Designer | Tech Enthusiast</p>
+      <a href="#projects" class="btn-primary" role="button" tabindex="0">View My Work</a>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <div class="about">
+        <img src="subhankar.jpg" alt="Portrait photo of subhankar" />
+        <div class="about-text">
+          <p>Hello! I'm subhankar, currently i am doing bca in "seacom management college". this is  a demo i am still working on it.</p>
+          <p>Hobby gamming.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Me</h2>
+      <form id="contact-form" aria-label="Contact form">
+        <div class="form-message" id="form-message" role="alert" aria-live="polite"></div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required aria-required="true" autocomplete="name" />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" />
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required aria-required="true" ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 subhankar. All rights reserved.
+  </footer>
+
+  <script>
+    // Mobile menu toggle logic
+    const menuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMenu() {
+      const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('open');
+      mobileMenu.setAttribute('aria-hidden', String(expanded));
+      if (!expanded) {
+        // focus first link
+        const firstLink = mobileMenu.querySelector('a');
+        firstLink.focus();
+      } else {
+        menuButton.focus();
+      }
+    }
+    menuButton.addEventListener('click', toggleMenu);
+
+    // Close mobile menu when a link is clicked or focus leaves menu
+    mobileMenu.addEventListener('click', e => {
+      if(e.target.tagName === 'A') {
+        toggleMenu();
+      }
+    });
+    mobileMenu.addEventListener('keydown', e => {
+      // Close menu on Escape
+      if (e.key === 'Escape') {
+        toggleMenu();
+      }
+    });
+
+    // Contact form validation and dummy submit handler
+    const form = document.getElementById('contact-form');
+    const messageDiv = document.getElementById('form-message');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // Simple validation
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      if (!name || !email || !message) {
+        messageDiv.textContent = 'Please fill out all fields.';
+        messageDiv.style.color = '#dc2626'; // red error
+        return;
+      }
+      // Very basic email validation
+      const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      if (!emailPattern.test(email)) {
+        messageDiv.textContent = 'Please enter a valid email.';
+        messageDiv.style.color = '#dc2626'; // red error
+        form.email.focus();
+        return;
+      }
+      // Simulate form submission with 1.5s delay
+      messageDiv.textContent = 'Sending message...';
+      messageDiv.style.color = '#60a5fa'; // blue info
+      setTimeout(() => {
+        messageDiv.textContent = 'Thank you for your message! I will get back to you soon.';
+        messageDiv.style.color = '#22c55e'; // green success
+        form.reset();
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
+
