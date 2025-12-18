@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .skill-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+    
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+    
+    .contact-link {
+      transition: all 0.3s ease;
+    }
+    
+    .contact-link:hover {
+      transform: translateX(8px);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full overflow-auto">
+  <div class="w-full h-full" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><!-- Hero Section -->
+   <section class="min-h-screen flex items-center justify-center px-6 py-20">
+    <div class="text-center">
+     <h1 id="name" class="text-6xl font-bold text-white mb-4" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">SUBHANKAR</h1>
+     <p id="tagline" class="text-2xl text-white opacity-90" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">BCA Student | AI Enthusiast | Passionate Coder</p>
+     <div class="mt-8"><a href="#about" class="inline-block px-8 py-3 bg-white text-purple-600 rounded-full font-semibold hover:bg-opacity-90 transition-all" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Learn More</a>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="w-full px-6 py-20" style="background-color: #f8f9fa;">
+    <div class="max-w-4xl mx-auto">
+     <h2 id="about-heading" class="text-4xl font-bold mb-6 gradient-text" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">About Me</h2>
+     <p id="about-text" class="text-lg leading-relaxed" style="color: #333333; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Hi! I am Subhankar Mandal. I'm a BCA student at Seacom Management College.Passed secondary and higher secondary education from GOURIPUR SRI SRI RAMKRISHNA VIDYAPITH. I have a keen interest in learning new things. Coding is my love and working with AI is my passion..</p>
+    </div>
+   </section><!-- Skills Section -->
+   <section class="w-full px-6 py-20" style="background-color: #ffffff;">
+    <div class="max-w-6xl mx-auto">
+     <h2 id="skills-heading" class="text-4xl font-bold mb-12 text-center gradient-text" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Skills</h2>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="skill-card p-6 rounded-lg" style="background-color: #f8f9fa; border: 2px solid #e9ecef;">
+       <div class="text-4xl mb-4">
+        💻
+       </div>
+       <h3 class="text-xl font-semibold mb-2" style="color: #333333; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Frontend Development</h3>
+       <p style="color: #6c757d; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">HTML, CSS, JavaScript</p>
+      </div>
+      <div class="skill-card p-6 rounded-lg" style="background-color: #f8f9fa; border: 2px solid #e9ecef;">
+       <div class="text-4xl mb-4">
+        🐍
+       </div>
+       <h3 class="text-xl font-semibold mb-2" style="color: #333333; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Programming Languages</h3>
+       <p style="color: #6c757d; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">C, Python</p>
+      </div>
+      <div class="skill-card p-6 rounded-lg" style="background-color: #f8f9fa; border: 2px solid #e9ecef;">
+       <div class="text-4xl mb-4">
+        🧮
+       </div>
+       <h3 class="text-xl font-semibold mb-2" style="color: #333333; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Problem Solving</h3>
+       <p style="color: #6c757d; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Data Structures &amp; Algorithms</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Projects Section -->
+   <section class="w-full px-6 py-20" style="background-color: #f8f9fa;">
+    <div class="max-w-6xl mx-auto">
+     <h2 id="projects-heading" class="text-4xl font-bold mb-12 text-center gradient-text" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Featured Projects</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="project-card rounded-lg overflow-hidden" style="background-color: #ffffff; border: 2px solid #e9ecef;">
+       <div class="h-48 flex items-center justify-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><span class="text-6xl">✋</span>
+       </div>
+       <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-2" style="color: #333333; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Hand Gesture Volume Control</h3>
+        <p class="mb-4" style="color: #6c757d; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Control laptop volume using hand gestures with computer vision and real-time tracking.</p>
+        <div class="flex gap-2"><span class="px-3 py-1 text-sm rounded-full" style="background-color: #e9ecef; color: #495057; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Python</span> <span class="px-3 py-1 text-sm rounded-full" style="background-color: #e9ecef; color: #495057; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">OpenCV</span>
+        </div>
+       </div>
+      </div>
+      <div class="project-card rounded-lg overflow-hidden" style="background-color: #ffffff; border: 2px solid #e9ecef;">
+       <div class="h-48 flex items-center justify-center" style="background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);"><span class="text-6xl">👁️</span>
+       </div>
+       <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-2" style="color: #333333; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Eye Blink Counter</h3>
+        <p class="mb-4" style="color: #6c757d; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Real-time eye blink detection and counting system using facial landmark recognition.</p>
+        <div class="flex gap-2"><span class="px-3 py-1 text-sm rounded-full" style="background-color: #e9ecef; color: #495057; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Python</span> <span class="px-3 py-1 text-sm rounded-full" style="background-color: #e9ecef; color: #495057; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">OpenCV</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="w-full px-6 py-20" style="background-color: #ffffff;">
+    <div class="max-w-4xl mx-auto">
+     <h2 id="contact-heading" class="text-4xl font-bold mb-12 text-center gradient-text" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">Get In Touch</h2>
+     <div class="space-y-6"><a href="mailto:subhomandal1547@gmail.com" class="contact-link flex items-center p-4 rounded-lg" style="background-color: #f8f9fa; text-decoration: none;"> <span class="text-3xl mr-4">📧</span>
+       <div>
+        <p class="font-semibold" style="color: #333333; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;" id="email-label">Email</p>
+        <p style="color: #6c757d; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">subhomandal1547@gmail.com</p>
+       </div></a> <a href="https://www.linkedin.com/in/subhankar-mandal-97a90b350" target="_blank" rel="noopener noreferrer" class="contact-link flex items-center p-4 rounded-lg" style="background-color: #f8f9fa; text-decoration: none;"> <span class="text-3xl mr-4">💼</span>
+       <div>
+        <p class="font-semibold" style="color: #333333; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;" id="linkedin-label">LinkedIn</p>
+        <p style="color: #6c757d; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">linkedin.com/in/subhankar-mandal-97a90b350</p>
+       </div></a> <a href="https://github.com/subho0210" target="_blank" rel="noopener noreferrer" class="contact-link flex items-center p-4 rounded-lg" style="background-color: #f8f9fa; text-decoration: none;"> <span class="text-3xl mr-4">💻</span>
+       <div>
+        <p class="font-semibold" style="color: #333333; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;" id="github-label">GitHub</p>
+        <p style="color: #6c757d; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;">github.com/subho0210</p>
+       </div></a>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#667eea",
+      surface_color: "#ffffff",
+      text_color: "#333333",
+      primary_action_color: "#667eea",
+      secondary_action_color: "#6c757d",
+      font_family: "Inter",
+      font_size: 16,
+      name: "SUBHANKAR",
+      tagline: "BCA Student | AI Enthusiast | Passionate Coder",
+      about_heading: "About Me",
+      about_text: "Hi! I am Subhankar Mandal. I'm a BCA student at Seacom Management College. I have a keen interest in learning new things. Coding is my love and working with AI is my passion.",
+      skills_heading: "Skills",
+      projects_heading: "Featured Projects",
+      contact_heading: "Get In Touch",
+      email_label: "Email",
+      linkedin_label: "LinkedIn",
+      github_label: "GitHub"
+    };
+
+    async function onConfigChange(config) {
+      const baseSize = config.font_size || defaultConfig.font_size;
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseFontStack = "'Helvetica Neue', Arial, sans-serif";
+      const fontFamily = `'${customFont}', ${baseFontStack}`;
+      
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+
+      // Update gradient backgrounds
+      const heroSection = document.querySelector('body > div');
+      heroSection.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${primaryActionColor} 100%)`;
+
+      // Update surface colors
+      document.getElementById('about').style.backgroundColor = surfaceColor;
+      document.querySelectorAll('.skill-card').forEach(card => {
+        card.style.backgroundColor = surfaceColor;
+      });
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.style.backgroundColor = surfaceColor;
+      });
+
+      // Update text colors
+      document.getElementById('name').textContent = config.name || defaultConfig.name;
+      document.getElementById('name').style.fontFamily = fontFamily;
+      document.getElementById('name').style.fontSize = `${baseSize * 3.75}px`;
+
+      document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+      document.getElementById('tagline').style.fontFamily = fontFamily;
+      document.getElementById('tagline').style.fontSize = `${baseSize * 1.5}px`;
+
+      document.getElementById('about-heading').textContent = config.about_heading || defaultConfig.about_heading;
+      document.getElementById('about-heading').style.fontFamily = fontFamily;
+      document.getElementById('about-heading').style.fontSize = `${baseSize * 2.5}px`;
+
+      document.getElementById('about-text').textContent = config.about_text || defaultConfig.about_text;
+      document.getElementById('about-text').style.fontFamily = fontFamily;
+      document.getElementById('about-text').style.fontSize = `${baseSize * 1.125}px`;
+      document.getElementById('about-text').style.color = textColor;
+
+      document.getElementById('skills-heading').textContent = config.skills_heading || defaultConfig.skills_heading;
+      document.getElementById('skills-heading').style.fontFamily = fontFamily;
+      document.getElementById('skills-heading').style.fontSize = `${baseSize * 2.5}px`;
+
+      document.getElementById('projects-heading').textContent = config.projects_heading || defaultConfig.projects_heading;
+      document.getElementById('projects-heading').style.fontFamily = fontFamily;
+      document.getElementById('projects-heading').style.fontSize = `${baseSize * 2.5}px`;
+
+      document.getElementById('contact-heading').textContent = config.contact_heading || defaultConfig.contact_heading;
+      document.getElementById('contact-heading').style.fontFamily = fontFamily;
+      document.getElementById('contact-heading').style.fontSize = `${baseSize * 2.5}px`;
+
+      document.getElementById('email-label').textContent = config.email_label || defaultConfig.email_label;
+      document.getElementById('email-label').style.fontFamily = fontFamily;
+      document.getElementById('email-label').style.color = textColor;
+
+      document.getElementById('linkedin-label').textContent = config.linkedin_label || defaultConfig.linkedin_label;
+      document.getElementById('linkedin-label').style.fontFamily = fontFamily;
+      document.getElementById('linkedin-label').style.color = textColor;
+
+      document.getElementById('github-label').textContent = config.github_label || defaultConfig.github_label;
+      document.getElementById('github-label').style.fontFamily = fontFamily;
+      document.getElementById('github-label').style.color = textColor;
+
+      // Update all skill card headings
+      document.querySelectorAll('.skill-card h3').forEach(heading => {
+        heading.style.fontFamily = fontFamily;
+        heading.style.fontSize = `${baseSize * 1.25}px`;
+        heading.style.color = textColor;
+      });
+
+      document.querySelectorAll('.skill-card p').forEach(p => {
+        p.style.fontFamily = fontFamily;
+        p.style.fontSize = `${baseSize}px`;
+        p.style.color = secondaryActionColor;
+      });
+
+      // Update project cards
+      document.querySelectorAll('.project-card h3').forEach(heading => {
+        heading.style.fontFamily = fontFamily;
+        heading.style.fontSize = `${baseSize * 1.5}px`;
+        heading.style.color = textColor;
+      });
+
+      document.querySelectorAll('.project-card > div > p').forEach(p => {
+        p.style.fontFamily = fontFamily;
+        p.style.fontSize = `${baseSize}px`;
+        p.style.color = secondaryActionColor;
+      });
+
+      // Update contact links
+      document.querySelectorAll('.contact-link p').forEach(p => {
+        p.style.fontFamily = fontFamily;
+        p.style.fontSize = `${baseSize}px`;
+      });
+
+      // Update button
+      document.querySelector('a[href="#about"]').style.fontFamily = fontFamily;
+      document.querySelector('a[href="#about"]').style.fontSize = `${baseSize}px`;
+      document.querySelector('a[href="#about"]').style.color = primaryActionColor;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.secondary_action_color = value;
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            if (window.elementSdk) {
+              window.elementSdk.config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            if (window.elementSdk) {
+              window.elementSdk.config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["name", config.name || defaultConfig.name],
+        ["tagline", config.tagline || defaultConfig.tagline],
+        ["about_heading", config.about_heading || defaultConfig.about_heading],
+        ["about_text", config.about_text || defaultConfig.about_text],
+        ["skills_heading", config.skills_heading || defaultConfig.skills_heading],
+        ["projects_heading", config.projects_heading || defaultConfig.projects_heading],
+        ["contact_heading", config.contact_heading || defaultConfig.contact_heading],
+        ["email_label", config.email_label || defaultConfig.email_label],
+        ["linkedin_label", config.linkedin_label || defaultConfig.linkedin_label],
+        ["github_label", config.github_label || defaultConfig.github_label]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b00cdc4c4143e1c',t:'MTc2NjA4MzM4NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
